@@ -1,0 +1,10 @@
+There are 4 pages in this web application:
+1.HomePage
+2.AddBook Page
+3.ViewBook Page
+4.EditBook Page
+
+In the Home page there are link of 3 pages,you can click on the link and go the that page.
+In the AddBook page user can add the title and author of a book and click on save button to save the book in the booklist database which is connected to Mysql database.
+In the ViewBook page user can see the list of books entry with Title and author of the book.User can update the Title and Author of a book by clicking on the "update" button of that book or also User can delete a book entry by clicking on "delete" button of that book.
+In the EditBook page user can Rewrite the Title and Author of the book and click on "edit and save" to update it.

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff0000;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ADDBOOK FORM -->
+<h1>Add New Book</h1>
+<form id="bookForm" action="SaveServlet" method="post">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" id="title" name="title" required/></td>
+        </tr>
+        <tr>
+            <td>Author:</td>
+            <td><input type="text" id="author" name="author" required/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Save Book"/></td>
+        </tr>
+    </table>
+</form>
+<br>
+<a href="index.html">Back To Home Page</a>
+<a href="ViewServlet">View Book</a>
+<!-- validation  for the both field must be filled  in the form to add new book -->
+<script>
+    document.getElementById('bookForm').addEventListener('submit', function(event) {
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        if (title === '' || author === '') {
+            alert('Both fields are required!');
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>
